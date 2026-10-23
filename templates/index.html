@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <title>KEYLOGGER FOR SECURITY RESEARCH</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+  <main class="page">
+    <section class="demo-card" aria-labelledby="page-title">
+      <header class="intro">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="5" width="18" height="14" rx="3" />
+            <path d="M7 9h.01M11 9h.01M15 9h.01M7 13h.01M11 13h.01M15 13h.01M8 16h8" />
+          </svg>
+        </div>
+        <h1 id="page-title">KEYLOGGER FOR SECURITY RESEARCH</h1>
+        <p>A transparent, local-only keystroke demonstration.</p>
+      </header>
+
+      <div class="privacy-notice" role="note">
+        <span class="privacy-indicator" aria-hidden="true"></span>
+        <p>For this demo only. Do not enter passwords or sensitive information. Nothing is saved or sent.</p>
+      </div>
+
+      <div class="controls" aria-label="Demonstration controls">
+        <button id="start-button" class="button button-primary" type="button">
+          <span class="button-icon" aria-hidden="true">▶</span>
+          Start
+        </button>
+        <button id="stop-button" class="button button-secondary" type="button" disabled>
+          <span class="button-icon" aria-hidden="true">■</span>
+          Stop
+        </button>
+        <span id="demo-status" class="status" data-active="false" role="status" aria-live="polite">
+          Stopped
+        </span>
+      </div>
+
+      <div class="input-section">
+        <label for="demo-input">Dedicated demo input</label>
+        <textarea
+          id="demo-input"
+          name="demo-input"
+          rows="3"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+          placeholder="Start the demo, then type here..."
+          disabled
+          aria-describedby="input-help"
+        ></textarea>
+        <p id="input-help" class="field-help">Only keystrokes in this field are displayed below.</p>
+      </div>
+
+      <section class="keystroke-panel" aria-label="Keystroke output">
+        <div class="panel-header">
+          <span class="panel-title">Keystroke output</span>
+          <span id="keystroke-count" class="count">0 keys</span>
+        </div>
+        <div
+          id="keystroke-log"
+          class="keystroke-log"
+          role="log"
+          aria-live="polite"
+          aria-relevant="additions"
+          aria-label="Recorded keystrokes from the dedicated demo input"
+        >
+          <p id="empty-state" class="empty-state">Your demo keystrokes will appear here.</p>
+        </div>
+      </section>
+
+      <footer class="footer-note">This demonstration runs in your browser and exists only for this page session.</footer>
+    </section>
+  </main>
+</body>
+</html>
